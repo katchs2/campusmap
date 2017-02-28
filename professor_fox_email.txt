@@ -1,0 +1,13 @@
+Now this. the map project was done by PhD student Jin Zheng - <zhengj3@gmail.com> - ask him for source code, else I can 
+pull it from the working site.
+
+Two key data sources:
+
+GIS (KML) of RPI buildings: https://data.rpi.edu/xmlui/handle/10833/24
+
+Classroom list - details attached.
+
+Hope this can get you started.
+
+Let me know.
+---Peter.

@@ -1,0 +1,39 @@
+Samm Katcher <sammiamm.katcher@gmail.com>
+Feb 18 (10 days ago)
+
+to yacsrpi 
+Hi YACS,
+I'm Samm and I'm in Professor Moorthy's Open Source class. For a project, I was interested in making an update to the interactive campus map with classrooms/ courses. The existing project looks like this: http://map.rpi.edu/index.php/RPI_Map.
+ I didn't know if this is something that you guys would potentially be interested in integrating. I also wanted to ask you more specifically how you pull courses and their information from SIS because I will be pulling room numbers from SIS. Thanks and have a nice long weekend!
+
+
+YACS RPI
+Feb 18 (10 days ago)
+
+to me 
+Hey Samm,
+
+Thanks for reaching out! We'd be happy to help you however we can.
+
+First of all, we receive data from SIS in the form of an XML file that is periodically updated (https://sis.rpi.edu/reg/rocs/201701.xml). A new file is created with the appropriate name each semester. This data source is provided and maintained by IACS, one of the administrative organizations at RPI. As you can see in the file, we are not currently provided with location data. It may very well be possible to have the location data added to the data source very easily, we have just never looked into it (there is currently a "location" field in the file but it is always empty).
+
+If you'd like, I can reach out to my contact at IACS and ask them about location data (I can CC you if you'd like). It may be as simple as flipping a switch, although I cannot say for sure. They are very responsive so if I email them this weekend I will likely get a response right after the long weekend. If they are able to provide this data, we can consider adding it to the YACS public API for easy and consistent access, although I cannot promise a timeframe for that yet.
+
+In regards to the integration though, what exactly did you have in mind? We are always open to new ideas although our time tables can be a bit unpredictable sometimes. Definitely take a look at the YACS API though. If we are able to get location data added in a timely manner it may be very useful for your project.
+
+Thanks again, and let me know if you have any more questions.
+
+- Richie & the YACS Team
+
+
+YACS RPI
+Feb 24 (4 days ago)
+
+to me 
+Hi,
+
+Just wanted to let you know that our friends at IACS have given us access to location data (this is something I've been meaning to ask them for a while so no worries if you don't end up using it). If you take a look at https://sis.rpi.edu/reg/rocs/201701.xml you can see each period now has a location field.
+
+I'm going to try to get this integrated with our JSON API but I'm not sure when I'll be able to get to that.
+
+Let me know if you you have any other questions!

@@ -1,0 +1,73 @@
+Richie Young <richiejoeyoung@gmail.com>
+Feb 24 (4 days ago)
+
+to Michelle, David, me, Cameron 
+Hello Michelle,
+
+When you get the chance, I was hoping you could help us out with obtaining some additional data from SIS. In the large XML file you have set up for us (https://sis.rpi.edu/reg/rocs/201701.xml), there is a location field present. However, this location field is always blank. Would it be possible to add the location data to that XML file (specifically, building names and room numbers, as is shown in SIS?)
+
+There is a student, Samm (CC'd) who would like to potentially use this information to improve the RPI map (http://map.rpi.edu/index.php/RPI_Map), and we would like to add it to YACS as well.
+
+Thanks a lot, and have a nice weekend.
+
+
+Henry, Michelle E <henrym2@rpi.edu>
+Feb 24 (4 days ago)
+
+to Richie, David, me, Cameron 
+Hi Richie
+ 
+Location is populated after the Registrar’s Office gives the go-ahead for each term to display building & room.  They just did that for summer so I added that to the ROCS file.  If spring is missing it’s because we overlooked it on the job setting.
+ 
+To add location to YACS I’ll have to send it to our support list.  It will get picked up as one of the developers has time.  
+ 
+Thanks-
+ 
+Michelle
+ 
+From: Richie Young [mailto:richiejoeyoung@gmail.com] 
+Sent: Friday, February 24, 2017 2:51 PM
+To: Henry, Michelle E <henrym2@rpi.edu>
+Cc: David Goldschmidt <goldschmidt@gmail.com>; sammiamm.katcher@gmail.com; Cameron Z. Root <rootc2@rpi.edu>
+Subject: Location Data for YACS data source
+
+
+Richie Young <richiejoeyoung@gmail.com>
+Feb 24 (4 days ago)
+
+to Michelle, David, me, Cameron 
+Thanks Michelle!
+
+I'm able to see locations in the summer ROCS file, which is great. To be clear we do not need the location in the other (YACS_201x0x) file, just the ROCS ones. Adding it to the existing spring ROCS file would be nice to have but it is not terribly urgent as we will be switching to summer and then fall fairly soon.
+
+Thanks again,
+
+Richie
+
+
+Henry, Michelle E <henrym2@rpi.edu>
+Feb 24 (4 days ago)
+
+to Richie, David, me, Cameron 
+Hi Richie
+ 
+I just reran the spring file with the building & rooms in it.
+ 
+Michelle
+ 
+From: Richie Young [mailto:richiejoeyoung@gmail.com] 
+Sent: Friday, February 24, 2017 3:56 PM
+To: Henry, Michelle E <henrym2@rpi.edu>
+Cc: David Goldschmidt <goldschmidt@gmail.com>; sammiamm.katcher@gmail.com; Cameron Z. Root <rootc2@rpi.edu>
+Subject: Re: Location Data for YACS data source
+
+
+Richie Young <richiejoeyoung@gmail.com>
+Feb 24 (4 days ago)
+
+to Michelle, David, me, Cameron 
+Hi Michelle,
+
+Thanks for being so helpful as always! We really appreciate it!
+
+Have an excellent weekend.
