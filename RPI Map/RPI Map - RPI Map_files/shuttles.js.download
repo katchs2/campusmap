@@ -1,0 +1,143 @@
+var shuttles=[];
+var stops=[];
+var map;
+var host;  
+var thisperiod;
+var STATUS_URL = "http://shuttles.rpi.edu/positions/current.js";
+var STOPS_URL = "http://shuttles.rpi.edu/stops.js";
+var ROUTES_URL = "http://shuttles.rpi.edu/routes.js";
+var STOP_ICON_URL = "http://shuttles.rpi.edu/images/blue_pin.png?1251754990";
+var STOP_SHADOW_ICON_URL = "http://shuttles.rpi.edu/images/blue_pin_shadow.png?1251754990";
+var ICON_BASE_URL = "http://shuttles.rpi.edu/icons/rotate";
+var CENTER_LAT = 42.73075;
+var CENTER_LONG = -73.67652;
+function initializing2(newmap,period,wghost) 
+{
+	map=newmap;
+	host=wghost;
+	load_stops();
+	thisperiod=period*1000;
+	reloader();
+	
+}
+function load_stops(){
+
+	var url = "http://map.rpi.edu/extensions/TetherlessMap/test.php?url=http://shuttles.rpi.edu/stops.xml&type=text/xml";
+      var tinyIcon = new GIcon();
+      tinyIcon.image = "http://map.rpi.edu/extensions/TetherlessMap/test.php?url="+STOP_ICON_URL+"&type=image";
+      tinyIcon.shadow = "http://map.rpi.edu/extensions/TetherlessMap/test.php?url="+STOP_SHADOW_ICON_URL+"&type=image";
+      tinyIcon.iconSize = new GSize(12, 20);
+      tinyIcon.shadowSize = new GSize(22, 20);
+      tinyIcon.iconAnchor = new GPoint(6, 20);
+      tinyIcon.infoWindowAnchor = new GPoint(5, 1);
+      markerOptions = { icon:tinyIcon }
+	  var xhttp;
+if (window.XMLHttpRequest)
+  {
+	xhttp=new XMLHttpRequest();
+  }
+else // Internet Explorer 5/6
+  {
+	xhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+	xhttp.open("GET",url,false);
+	xhttp.send("");
+	xmlDoc=xhttp.responseXML; 
+	//alert(xmlDoc);
+	var lat = xmlDoc.getElementsByTagName("latitude");
+	var lng = xmlDoc.getElementsByTagName("longitude");
+	var name = xmlDoc.getElementsByTagName("name");
+	document.getElementById('t').innerHTML="";
+	for(var i=0;i<lat.length;i++)
+	{
+		var point =  new GLatLng(lat[i].childNodes[0].nodeValue,lng[i].childNodes[0].nodeValue);
+		var info = name[i].childNodes[0].nodeValue;
+		var marker = createInfoIconMarker(point, info, tinyIcon);
+        map.addOverlay(marker);
+	}
+}
+
+function add_shuttle_markers()
+{
+	var url = "http://map.rpi.edu/extensions/TetherlessMap/test.php?url=http://shuttles.rpi.edu/positions/current.xml&type=text/xml";
+var xhttp;
+if (window.XMLHttpRequest)
+  {
+	xhttp=new XMLHttpRequest();
+  }
+else // Internet Explorer 5/6
+  {
+	xhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+	xhttp.open("GET",url,false);
+	xhttp.send("");
+	xmlDoc=xhttp.responseXML; 
+	var headings=xmlDoc.getElementsByTagName('heading');
+	var lat = xmlDoc.getElementsByTagName("latitude");
+	var lng = xmlDoc.getElementsByTagName("longitude");
+	var width = xmlDoc.getElementsByTagName("icon-width");
+	var height = xmlDoc.getElementsByTagName("icon-height");
+	var speed = xmlDoc.getElementsByTagName("speed");
+	clearmarkers();
+	
+	for(var i=0;i<headings.length;i++)
+	{
+		var icon=shuttle_icon(headings[i].childNodes[0].nodeValue,width[i].childNodes[0].nodeValue,height[i].childNodes[0].nodeValue);
+		var info="Speed: "+speed[i].childNodes[0].nodeValue+" mph";
+		var point =  new GLatLng(lat[i].childNodes[0].nodeValue,lng[i].childNodes[0].nodeValue);
+		var marker = createInfoIconMarker(point, info, icon);
+		map.addOverlay(marker);
+		shuttles.push(marker);
+	}
+	
+}
+function shuttle_icon(rotation, width, height){
+  var icon = new GIcon();
+  //The default image
+  icon.image = "http://map.rpi.edu/extensions/TetherlessMap/test.php?url="+ICON_BASE_URL + "/" + rotation + ".png"+"&type=text/xml";
+  //For older IE versions that don't like PNG
+  icon.printImage = "http://map.rpi.edu/extensions/TetherlessMap/test.php?url="+ICON_BASE_URL + "/" + rotation + ".gif"+"&type=text/xml";
+  //For older Mozilla browsers that don't like transparency
+  icon.mozPrintImage  = "http://map.rpi.edu/extensions/TetherlessMap/test.php?url="+ICON_BASE_URL + "/" + rotation + ".jpg"+"&type=text/xml";
+
+  var mid_width = width/2;
+  var mid_height = height/2;
+
+  icon.iconSize = new GSize(width, height);
+  icon.iconAnchor = new GPoint(mid_width, mid_height);
+  icon.infoWindowAnchor = new GPoint(mid_width, mid_height);
+  return icon;
+}
+function reloader(){
+	window.defaultStatus = "Refreshing Data..";
+	document.getElementById('t').innerHTML="Refreshing Shuttle Position..";
+	add_shuttle_markers();
+	document.getElementById('t').innerHTML="";
+	window.defaultStatus = "Refresh Complete";
+	setTimeout("reloader();", thisperiod);
+
+}
+function clearmarkers(){
+	for (var i=0;i<shuttles.length;i++) {
+		map.removeOverlay(shuttles[i]);
+	}
+	shuttles.length = 0;
+}
+function dynamic_marker(address, width, height){
+	var d_icon = new GIcon();
+	d_icon.image = address;
+	d_icon.iconSize = new GSize(width, height);
+	d_icon.iconAnchor = new GPoint(width/2, height/2);
+	d_icon.infoWindowAnchor = new GPoint(width/2, height/2);
+	return d_icon;
+}
+function createInfoIconMarker(point, address, icon) {
+	var marker = new GMarker(point, icon);
+	GEvent.addListener(marker, "click",
+	function() {
+		marker.openInfoWindowHtml(address);
+	}
+	);
+	return marker;
+}
+

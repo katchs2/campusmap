@@ -1,0 +1,77 @@
+var wgLocalPath=null;
+var wgGoogleMapsOnThisPage=null,zoom=null,type=null,controls=null,data=null;
+var lpoint="dedd";
+var geocoder=null;
+function initializeWgs(pwgLocalPath)
+{
+wgLocalPath=pwgLocalPath;
+geocoder = new GClientGeocoder();
+}
+
+    function showAddress(address) {
+      if (geocoder) {
+        geocoder.getLatLng(
+          address,
+          function(pt) {
+            if (!pt) {
+              
+            } else {
+			
+				window.lpoint=pt;
+				document.getElementById('t').innerHTML=lpoint.lat()+","+lpoint.lng();
+				
+			}
+          }
+        );
+      }
+    }
+
+function gt(address)
+{
+showAddress(address);
+}
+
+
+
+/*
+create labeled marker with different marker
+change marker property and the link of a marker picture to change marker
+current marker has residence, food, atm, etc. proerty and picture
+*/
+function createMarker(point,label,name,property,fullname) 
+{ 
+	var icon = new GIcon();
+	property=property.split(";");
+	if(property.length>1)
+	{
+	icon.image=wgLocalPath+"/extensions/TetherlessMap/MarkerIcon/plus_icon.gif";
+	}
+	else if(property.length==1&&property[0]=="Parking")
+	{
+	icon.image=wgLocalPath+"/extensions/TetherlessMap/MarkerIcon/parking.png";
+	}
+	else if(property.length==1&&property[0]=="Residence Hall")
+	{
+	icon.image=wgLocalPath+"/extensions/TetherlessMap/MarkerIcon/residence.gif";
+	}
+	else if(property.length==1&&property[0]=="Food")
+	{
+	icon.image=wgLocalPath+"/extensions/TetherlessMap/MarkerIcon/food.gif";
+	}
+	else if(property.length==1&&property[0]=="ATM")
+	{
+	icon.image=wgLocalPath+"/extensions/TetherlessMap/MarkerIcon/atm.gif";
+	}
+	else{
+	icon.image = wgLocalPath+'/extensions/TetherlessMap/MarkerIcon/greencirclemarker.png';
+	}
+	icon.iconSize = new GSize(12, 12);
+	icon.iconAnchor = new GPoint(8, 8);
+	icon.infoWindowAnchor = new GPoint(12, 7);
+	opts = { "icon": icon, "clickable": true, "labelText": name, "labelOffset": new GSize(0, 0), "title": fullname};
+	var marker = new LabeledMarker(point,opts);  
+	GEvent.addListener(marker, 'click', function(){ marker.openInfoWindowHtml(label); }); 
+	return marker;  
+} 
+window.unload = GUnload;
+
