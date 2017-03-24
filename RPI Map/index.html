@@ -1,0 +1,102 @@
+<!doctype html>
+  <html lang="en" ng-app="myApp">
+    <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>Map Mock Up- Samm Katcher</title>
+
+      <!-- Bootstrap -->
+      <!-- Latest compiled and minified CSS -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+      <!-- Angular -->
+      <script src='//ajax.googleapis.com/ajax/libs/angularjs/1.2.6/angular.min.js'></script>
+      
+    </head>
+
+    <body ng-controller="mainController">
+      <h1> Samm Katcher </h1>
+      <style>
+        body{
+          font-family: 'Roboto', Arial, sans-serif;
+          font-weight: normal;
+          text-align: center;
+          color: #ec528d;
+          background-color: #f9cbdc;
+          font-size: 20px;
+
+        }
+        .button{
+          display: inline-block;
+          box-shadow: 0 8px 0 #c5376d, 0 15px 20px rgba(0, 0, 0, .35);
+          font-size: 15px;
+          color: #fff;
+          padding: 10px 10px;
+          background-color: #ec528d;
+          border-radius: 8px;
+          line-height: 1;
+        }
+      </style>
+      <!-- Google Maps API 
+      Code adapted from Google Maps API, link in the Readme 
+      Example 1: Troy !-->
+
+        <!-- The Buttons across the top -->
+         <div class="panel">
+            <button class="button btn btn-default" ng-click="view=1">Map with Troy</button>
+
+          </div>
+
+
+        <div ng-show="view==1">
+          <style>
+            #troymap {
+              height: 400px;
+              width: 100%;
+             }
+          </style>
+
+          <h2> Where is Troy? </h2>
+          <div id="troymap"></div>
+        </div>
+
+        <script>
+
+      // Instantiate the myApp Angular application that we attached to out html tag
+        var app = angular.module("myApp", []);
+
+      // Here is the Javascript for our controller which we linked (scoped) to the body tag
+        app.controller("mainController", ['$scope','$http',function($scope, $http) {
+
+        // Lets setup some variables for our expressions  
+          $scope.$watch("view",function(nv,ov){
+            if (nv==3){
+              initMap();
+            }
+          })    
+        }]);
+          app.controller('demo', function($scope) {
+            $scope.val = 1;
+          });
+
+          function initMap() {
+            var uluru = {lat: 42.729948799999995, lng: -73.6766655};
+            var map = new google.maps.Map(document.getElementById('troymap'), {
+              zoom: 4,
+              center: uluru
+            });
+            var marker = new google.maps.Marker({
+              position: uluru,
+              map: map
+            });
+          }
+          
+        </script>
+
+        <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBT7nklyRBwe_YfzSFxBpJ4ngA4RcM5vqc&callback=initMap">
+        </script>
+
+  </body>
+  </html>
