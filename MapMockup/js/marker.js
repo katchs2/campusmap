@@ -1,3 +1,5 @@
+// This code will mainly be used to add markers to the map
+
 var map;
 // Create a new blank array for all the listing markers.
 var markers = [];
@@ -7,12 +9,14 @@ function initMap() {
   map = new google.maps.Map(document.getElementById('map'), {
     center: {lat: 42.729948799999995, lng: -73.6766655},
     zoom: 17,
+    styles: [{"stylers":[{"hue": "#dd0d0d"}]},{"featureType": "road","elementType": "labels","stylers":[{"visibility":"off"}]},
+    {"featureType":"road","elementType":"geometry","stylers":[{"lightness": 100},{"visibility":"simplified"}]}],
     mapTypeId: google.maps.MapTypeId.HYBRID
   });
 
   // Get all notable locations from a JSON file
   $(document).ready(function(){
-    $.getJSON("locations.json", function(json) {
+    $.getJSON("json/locations.json", function(json) {
       console.log(json); // this will show the info it in firebug console
     });
   });
