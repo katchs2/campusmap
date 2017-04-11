@@ -1,0 +1,56 @@
+<!-- This is the corresponding "starter code" for 07_Markers/Infowindows in Udacity and Google's Maps
+API Course, Lesson 1 -->
+<html>
+ <head>
+ <!-- styles put here, but you can include a CSS file and reference it instead! -->
+   <style type="text/css">
+     html, body { height: 100%; margin: 0; padding: 0; }
+     #map { height: 100%; }
+   </style>
+ </head>
+ <body>
+   <div id="map"></div>
+   <script type="text/javascript">
+     // Create a map variable
+     var map;
+
+     // Create a single latLng literal object.
+     var home = {lat: 40.794033, lng: -73.041077};
+
+     // Function to initialize the map within the map div
+     function initMap() {
+       map = new google.maps.Map(document.getElementById('map'), {
+         center: home,
+         zoom: 14
+       });
+
+       // TODO: Create a single marker appearing on initialize -
+       // Create it with the position of the singleLatLng,
+       // on the map, and give it your own title!
+       var marker = new google.maps.Marker({
+        position: home,
+        title: "Home",
+        map: map, 
+        animation: google.maps.Animation.DROP,
+        id: 1
+       });
+
+       // TODO: create a single infowindow, with your own content.
+       var infowindow = new google.maps.InfoWindow({
+          content: '<div>' + marker.title + '</div>' +
+                   '<h1>Aaron\'s House</h1>' 
+       });
+       // TODO: create an EVENT LISTENER so that the infowindow opens when
+       // the marker is clicked!
+       marker.addListener('click',function(){
+        infowindow.open(map, marker);
+       });
+
+     }
+   </script>
+   <!--TODO: Insert your API Key in the below call to load the API.-->
+   <script async defer
+     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCOGUVgPYhTg2ucyTbUQPpKKLUFNSStgn4&callback=initMap">
+   </script>
+ </body>
+</html>
