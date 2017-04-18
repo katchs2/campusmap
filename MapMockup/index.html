@@ -3,14 +3,21 @@
   <head>
     <link rel="stylesheet" href="css/styles.css">
     <script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>RPI Campus Map</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
   </head>
   <body>
     <div class="container">
       <div class="options-box">
-        <h1>Find A Building/Classroom</h1>
+        <h1>Find a Building or Classroom</h1>
         <div>
-          <input id="show-listings" type="button" value="Show Listings">
-          <input id="hide-listings" type="button" value="Hide Listings">
+          <input class= "btn btn-default" id="show-listings" type="button" value="Show Listings">
+          <input class= "btn btn-default" id="hide-listings" type="button" value="Hide Listings">
         </div>
       </div>
       <div id="map"></div>
@@ -22,5 +29,12 @@
     </script>
     <script type="text/javascript" src="json/locations.json"></script>
     <script type="text/javascript" src="js/marker.js"></script>
-  </body>     
+  </body>   
+  <footer class= "well">
+    <p class="col-sm-3">Samm Katcher and Aaron Taylor</p>
+    <p class="col-sm-3">Intro to Open Source</p>
+    <p class="col-sm-3"> CSCI 2963 </p>
+    <p class="col-sm-3"> Spring 2017</p>
+  </footer>
+
 </html>
