@@ -1,63 +1,97 @@
 [
   {
-    "title": "Rensselaer Union",
-    "latitude": "42.729948799999995",
-    "longitude": "-73.6766655"
+   "title": "Rensselaer Union",
+  "latitude": "42.729948799999995",
+  "longitude": "-73.6766655",
+  "rooms": [{
+    "floors": {
+      "1": ["MOTHER'S", "GAMES ROOM", "RATHSKELLER"],
+      "2": ["2000,MCNEIL ROOM", "2124,MULTI-CULTURAL LONGUE", "2124,MEETING ROOM", "2424,MEETING ROOM"],
+      "3": ["3202,MEETING ROOM", "3210,MEETING ROOM", "3502,MEETING ROOM", "3510,MEETING ROOM", "3511,MEETING ROOM", "3602,MEETING ROOM",
+            "3606,EXHIBITION"]
+        }
+    }]
   }, 
-  {
-    "title": "Academy Hall Parking Lot",
-    "latitude": "42.72752",
-    "longitude": "-73.67958"
-  },
   {
     "title": "Academy Hall – Student Life Services Center",
     "latitude": "42.7274",
-    "longitude": "-73.67862"
-  },
-  {
-    "title": "Admissions Building",
-    "latitude": "42.73061",
-    "longitude": "-73.67557"
+    "longitude": "-73.67862",
+    "rooms": [{
+    "floors": {
+      "1":["Academy Hall Dance Studio"],
+      "3": ["Academy Hall Auditorium"]
+        }
+    }]
   },
   {
     "title": "Alumni House, Heffner",
     "latitude": "42.73283",
-    "longitude": "-73.67815"
-  },
-  {
-    "title": "Alumni Sports and Recreation Center",
-    "latitude": "42.72843",
-    "longitude": "-73.67668"
+    "longitude": "-73.67815",
+    "rooms": [{
+    "floors": {
+      "1": ["1007A,MEETING ROOM"],
+      "2": ["2009,MEETING ROOM", "2006,MEETING ROOM"],
+      "3": ["2005,MEETING ROOM"]
+        }
+    }]
   },
   {
     "title": "Amos Eaton Hall",
     "latitude": "42.73016",
-    "longitude": "-73.68257"
+    "longitude": "-73.68257",
+    "rooms": [{
+    "floors": {
+      "1": ["1007A,MEETING ROOM"],
+      "2": ["214,CLASS LEC", "215,CLASS HYBRID","216,CLASS LAPTOP","217,LAB RES COMP"],
+        }
+    }]
   },
   {
     "title": "Barton Hall",
     "latitude": "42.72898",
-    "longitude": "-73.6741"
+    "longitude": "-73.6741",
+    "rooms": [{
+    "floors": {
+      "1": ["1007A,MEETING ROOM"],
+      "2": ["214,CLASS LEC", "215,CLASS HYBRID","216,CLASS LAPTOP","217,LAB RES COMP"],
+        }
+    }]
   },
   {
     "title": "Biotechnology and Interdisciplinary Studies Building",
     "latitude": "42.72827",
-    "longitude": "-73.67906"
+    "longitude": "-73.67906",
+    "rooms": [{
+    "floors": {
+      "1": ["1375,MEETING ROOM","1353,MEETING SERV","1355,MEETING SERV"],
+      "2": ["214,CLASS LEC", "215,CLASS HYBRID","216,CLASS LAPTOP","217,LAB RES COMP"],
+      "3": []
+        }
+    }]
   },
   {
     "title": "Blaw Knox 1",
     "latitude": "42.7321",
-    "longitude": "-73.68076"
-  },
-  {
-    "title": "Boiler House",
-    "latitude": "42.73111",
-    "longitude": "-73.68196"
+    "longitude": "-73.68076",
+    "rooms": [{
+    "floors": {
+      "1": [],
+      "2": [],
+      "3": []
+        }
+    }]
   },
   {
     "title": "Bray Hall",
     "latitude": "42.72868",
-    "longitude": "-73.67354"
+    "longitude": "-73.67354",
+    "rooms": [{
+    "floors": {
+      "1": [],
+      "2": [],
+      "3": []
+        }
+    }]
   },
   {
     "title": "Bryckwyck",
@@ -98,11 +132,6 @@
     "title": "Crockett Hall",
     "latitude": "42.72823",
     "longitude": "-73.67332"
-  },
-  {
-    "title": "Darrin Communications Center",
-    "latitude": "42.72942",
-    "longitude": "-73.67927"
   },
   {
     "title": "Darrin Communications Center",
