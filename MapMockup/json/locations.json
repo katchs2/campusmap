@@ -42,7 +42,7 @@
     "rooms": [{
     "floors": {
       "1": ["1007A,MEETING ROOM"],
-      "2": ["214,CLASS LEC", "215,CLASS HYBRID","216,CLASS LAPTOP","217,LAB RES COMP"],
+      "2": ["214,CLASS LEC", "215,CLASS HYBRID","216,CLASS LAPTOP","217,LAB RES COMP"]
         }
     }]
   },
@@ -53,7 +53,7 @@
     "rooms": [{
     "floors": {
       "1": ["1007A,MEETING ROOM"],
-      "2": ["214,CLASS LEC", "215,CLASS HYBRID","216,CLASS LAPTOP","217,LAB RES COMP"],
+      "2": ["214,CLASS LEC", "215,CLASS HYBRID","216,CLASS LAPTOP","217,LAB RES COMP"]
         }
     }]
   },
