@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<!-- saved from url=(0067)https://goodblock.gladly.io/app/icon-view/#goodblock-icon-container -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Goodblock. An Adblocker with a Purpose</title>
+
+    
+
+    <meta name="description" content="From pop ups to YouTube and everything in between, we block the ads you&#39;d normally see. Choose to browse ad-free or view an ad to raise money for charity.">
+    <meta name="keywords" content="adblocker, adblock, extension, chrome, goodblock, gladly, charity">
+    <meta name="author" content="Gladly">
+
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://goodblock-static.s3.amazonaws.com/static/img/social-media/Charity_Milestone_20K_Raised.8934834afb50.jpg">
+    <meta property="og:image:secure_url" content="https://goodblock-static.s3.amazonaws.com/static/img/social-media/Charity_Milestone_20K_Raised.8934834afb50.jpg">
+
+    <link rel="icon" type="image/png" href="https://goodblock-static.s3.amazonaws.com/static/img/logos/logo-square-256x256.1a8bf7168c16.png">
+
+    <style>
+        html, body {
+            padding: 0px;
+            margin: 0px;
+        }
+        html {
+            min-height: 100%;
+            position: relative;
+        }
+        body {
+            height: 100%;
+            font-family: 'Arial Rounded MT Bold', 'Helvetica Rounded', Arial, sans-serif;
+            font-weight: 'normal';
+            background: transparent !important;
+        }
+
+        ::-webkit-scrollbar {
+            width: 5px;
+        }
+
+        ::-webkit-scrollbar-track {
+            border-radius: 10px;
+            background: 'transparent'
+        }
+
+        ::-webkit-scrollbar-thumb {
+            border-radius: 10px;
+            -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+        }
+
+        .no-selection-color::selection {
+          background-color: rgba(0,0,0,0);
+          -webkit-touch-callout: none;
+          -webkit-user-select: none;
+          -khtml-user-select: none;
+          -moz-user-select: none;
+          -ms-user-select: none;
+          user-select: none;
+          -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+          -moz-tap-highlight-color: rgba(255, 255, 255, 0);
+          -ms-tap-highlight-color: rgba(255, 255, 255, 0);
+          -o-tap-highlight-color: rgba(255, 255, 255, 0);
+        }
+        
+        .no-selection-color::-moz-selection {
+          background-color: rgba(0,0,0,0);
+          -webkit-touch-callout: none;
+          -webkit-user-select: none;
+          -khtml-user-select: none;
+          -moz-user-select: none;
+          -ms-user-select: none;
+          user-select: none;
+          -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+          -moz-tap-highlight-color: rgba(255, 255, 255, 0);
+          -ms-tap-highlight-color: rgba(255, 255, 255, 0);
+          -o-tap-highlight-color: rgba(255, 255, 255, 0);
+        }
+
+        .grayscale {-webkit-filter: grayscale(100%); filter: grayscale(100%);}
+
+        .intCategory img{
+            max-width: 60px;
+            max-height: 60px;
+        }
+
+        .intCategory .caption{
+            padding: 0 !important;
+        }
+        
+        .ad {
+            opacity: 0.01;
+        }
+        .ad.loaded {
+            opacity: 1;
+            transition: opacity 500ms ease-in;
+        }
+
+        .speech-bubble {
+            position: relative;
+            padding: 10px;
+            margin: 1em 0 3em;
+            /*border: 5px solid #FF0000;*/
+            border: 5px solid transparent;
+            color: #333;
+            background: #000;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            border-radius: 10px;
+            box-shadow: rgba(0, 0, 0, 0.2) 5px 6px 18px;
+        }
+
+    .speech-bubble:before {
+            content: "";
+            position: absolute;
+            bottom: -20px;
+            left: 10px;
+            border-width: 20px 20px 0;
+            border-style: solid;
+            /*border-color: #FF0000 transparent;*/
+            border-color: transparent;
+            display: block;
+            width: 0;
+        }
+
+    .speech-bubble:after {
+            content: "";
+            position: absolute;
+            bottom: -13px;
+            left: 17px;
+            border-width: 13px 13px 0;
+            border-style: solid;
+            border-color: #000 transparent;
+            display: block;
+            width: 0;
+        }
+
+
+    .speech-bubble-grey {
+            position: relative;
+            padding: 10px;
+            margin: 1em 0 3em;
+            /*border: 5px solid #FF0000;*/
+            border: 5px solid transparent;
+            color: #333;
+            background: #5a5a5a;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            border-radius: 10px;
+            box-shadow: rgba(0, 0, 0, 0.2) 5px 6px 18px;
+        }
+
+    .speech-bubble-grey:before {
+            content: "";
+            position: absolute;
+            bottom: -20px;
+            left: 10px;
+            border-width: 20px 20px 0;
+            border-style: solid;
+            /*border-color: #FF0000 transparent;*/
+            border-color: transparent;
+            display: block;
+            width: 0;
+        }
+
+    .speech-bubble-grey:after {
+            content: "";
+            position: absolute;
+            bottom: -13px;
+            left: 17px;
+            border-width: 13px 13px 0;
+            border-style: solid;
+            border-color: #5a5a5a transparent;
+            display: block;
+            width: 0;
+        }
+
+
+    .speech-bubble-blue:after {
+          content: "";
+          position: absolute;
+          bottom: -13px;
+          left: 17px;
+          border-width: 13px 13px 0;
+          border-style: solid;
+          border-color: #286580 transparent;
+          display: block;
+          width: 0;
+      }
+
+    /*Extension styles*/
+
+    /*
+.goodblock-icon-appear {
+  left: -1000px !important;
+  transition: left 1.5s ease-in !important;
+}
+
+.goodblock-icon-appear.goodblock-icon-appear-active {
+  left: 10px !important;
+}
+*/
+
+.goodblock-icon-enter, .goodblock-icon-appear {
+    visibility: hidden !important;
+}
+
+.goodblock-icon-enter-active, .goodblock-icon-appear-active {
+    visibility: visible !important;
+    animation-name: slideRight;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+}
+
+.goodblock-icon-leave {
+    animation-name: slideLeft;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes slideRight {
+    0% {
+        transform: translateX(-150%);
+    }
+    50%{
+        transform: translateX(8%);
+    }
+    65%{
+        transform: translateX(-4%);
+    }
+    80%{
+        transform: translateX(4%);
+    }
+    95%{
+        transform: translateX(-2%);
+    }           
+    100% {
+        transform: translateX(0%);
+    }   
+}
+
+@keyframes slideLeft {      
+    100% {
+        transform: translateX(-150%);
+    }
+}
+
+.snooze-appear, .snooze-enter {
+    opacity: 0.01 !important;
+    transition: opacity 0.25s linear !important;
+}
+
+.snooze-appear-active, .snooze-enter-active {
+    opacity: 1 !important;
+}
+
+.snooze-leave {
+    opacity: 1 !important;
+    transition: opacity 0.15s linear !important;
+}
+
+.snooze-leave.snooze-leave-active {
+    opacity: 0.01 !important;
+}
+
+.snooze-tooltip-appear, .snooze-tooltip-enter {
+    opacity: 0.01 !important;
+    transition: opacity 0.10s linear !important;
+}
+
+.snooze-tooltip-appear-active, .snooze-tooltip-enter-active {
+    opacity: 1 !important;
+}
+
+.snooze-tooltip-leave {
+    opacity: 1 !important;
+    transition: opacity 0.10s linear !important;
+}
+
+.snooze-tooltip-leave.snooze-tooltip-leave-active {
+    opacity: 0.01 !important;
+}
+
+.ad-enter {
+    left: -100% !important;
+    
+}
+
+.ad-enter-active {
+    -webkit-animation: moveToRightFade .7s ease both !important;
+    animation: moveToRightFade .7s ease both !important;
+}
+
+@keyframes moveToRightFade {
+    from { }
+    to {
+        -webkit-transform: translateX(100%) !important;
+        transform: translateX(100%) !important;
+    }
+}
+
+.ad-leave {
+}
+
+.ad-leave-active {
+    -webkit-animation: moveToLeftFade .7s ease both !important;
+    animation: moveToLeftFade .7s ease both !important;
+}
+
+@keyframes moveToLeftFade {
+    from { }
+    to {
+        -webkit-transform: translateX(-100%) !important;
+        transform: translateX(-100%) !important;
+    }
+}
+
+.ad-dimmer-enter {
+    background: rgba(0, 0, 0, 0.01) !important;
+    transition: background 0.7s ease;
+}
+
+.ad-dimmer-enter-active {
+    background: rgba(0, 0, 0, 0.7) !important;
+}
+
+.ad-dimmer-leave {
+    background: rgba(0, 0, 0, 0.7) !important;
+    transition: background 0.7s ease;
+}
+
+.ad-dimmer-leave-active {
+    background: rgba(0, 0, 0, 0.01) !important;
+}
+
+.goodblock-ad-unit-leave {
+    opacity: 1 !important;
+}
+
+.goodblock-ad-unit-leave-active {
+    opacity: 0 !important;
+}
+
+/* Stats Carousel Styles */
+
+  .container {
+      -webkit-perspective: 2000px;
+         -moz-perspective: 2000px;
+           -o-perspective: 2000px;
+              perspective: 2000px;
+    }
+    #carousel {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+
+      -webkit-transform-style: preserve-3d;
+         -moz-transform-style: preserve-3d;
+           -o-transform-style: preserve-3d;
+              transform-style: preserve-3d;
+      -webkit-transition: -webkit-transform 1s;
+         -moz-transition: -moz-transform 1s;
+           -o-transition: -o-transform 1s;
+              transition: transform 1s;
+    }
+    #carousel figure {
+      display: block;
+      position: absolute;
+      left: 10px;
+      top: 10px;
+      font-weight: bold;
+      text-align: center;
+      padding: 10px;
+      background-color: rgb(190, 190, 190);
+    }
+
+     #carousel.panels-backface-invisible figure {
+      -webkit-backface-visibility: hidden;
+         -moz-backface-visibility: hidden;
+           -o-backface-visibility: hidden;
+              backface-visibility: hidden;
+    }
+
+    
+.adloadingview-appear, .adloadingview-enter {
+    opacity: 0.01 !important;
+    transition: opacity 0.7s linear !important;
+}
+
+.adloadingview-active, .adloadingview-enter-active {
+    opacity: 1 !important;
+}
+
+/* Spinner styles*/
+.spinner {
+  width: 50px;
+  height: 100px;
+  text-align: center;
+  font-size: 10px;
+}
+
+.spinner > div {
+  width: 18px;
+  height: 18px;
+  background-color: #0CA4E5;
+
+  border-radius: 100%;
+  display: inline-block;
+  -webkit-animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+  animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+}
+
+.spinner .bounce1 {
+  background-color: #FFCB62;
+  -webkit-animation-delay: -0.32s;
+  animation-delay: -0.32s;
+}
+
+.spinner .bounce2 {
+  -webkit-animation-delay: -0.16s;
+  animation-delay: -0.16s;
+}
+
+@-webkit-keyframes sk-bouncedelay {
+  0%, 80%, 100% { -webkit-transform: scale(0) }
+  40% { -webkit-transform: scale(1.0) }
+}
+
+@keyframes sk-bouncedelay {
+  0%, 80%, 100% { 
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  } 40% { 
+    -webkit-transform: scale(1.0);
+    transform: scale(1.0);
+  }
+}
+
+    /*
+     *  Tournament Brackets Styles
+    */
+
+    .main{
+        display:-webkit-flexbox;
+        display: -webkit-flex;
+        display:flex;
+        flex-direction:row;
+        -webkit-flex-direction:row;
+    }
+
+    .round {
+      display:-webkit-flexbox;
+      display: -webkit-flex;
+      display:flex;
+      flex-direction:column;
+      -webkit-flex-direction:column;
+      justify-content:center;
+      width:100%;
+      list-style:none;
+      padding:0;
+    }
+    .round .spacer{ flex-grow:1; -webkit-flex-grow:1;}
+    .round .spacer:first-child,
+    .round .spacer:last-child{ flex-grow:1; -webkit-flex-grow:1;}
+    .round .game-spacer{ flex-grow:3; -webkit-flex-grow:3;}
+
+    .round .final-spacer{ flex-grow:1; -webkit-flex-grow:1;}
+    .round .final-spacer:first-child,
+    .round .final-spacer:last-child{ flex-grow:0; -webkit-flex-grow:0;}
+
+    .mgPopover .popover-title {
+        background: #055882;
+        color: #FFF;
+    }
+
+    /*Notification modal styles*/
+
+    .notification-modal .modal-content {
+          background: transparent !important;
+          border: none !important;
+          box-shadow: none !important;
+          pointer-events: none;
+    }
+
+    .notification-modal .modal-dialog {
+          background: transparent !important;
+          border: none !important;
+          box-shadow: none !important;
+          pointer-events: none;
+    }
+
+    /* Notification Card Style*/
+ 
+/**
+ * Basics Styles
+ */
+
+.wrapper {
+    max-width: 400px;
+    margin: 50px auto;
+    padding-left: 1em;
+    padding-right: 1em;
+    background-color: transparent;
+    font-weight: 400;
+    font-size: 1.6em;
+    line-height: 1.6;
+    color: #666;
+    pointer-events: all;
+}
+
+.wrapper a {
+  text-decoration: none !important;
+}
+
+
+/**
+ * Helpers
+ */
+.border-tlr-radius { 
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px; 
+}
+
+.text-center { text-align: center; }
+
+.radius { border-radius: 2px; }
+
+.padding-tb { padding-top: 1.6rem; padding-bottom: 1.6rem;}
+
+.shadowDepth0 { box-shadow: 0 1px 3px rgba(0,0,0, 0.12); }
+
+.shadowDepth1 {
+   box-shadow: 
+        0 1px 3px rgba(0,0,0, 0.12),
+        0 1px 2px rgba(0,0,0, 0.24);      
+}
+
+
+/**
+ * Card Styles
+ */
+
+    .card {
+        background-color: #fff;
+        margin-bottom: 1.6rem;
+    }
+
+    .card__padding {
+        padding: 1.6rem;
+    }
+     
+    .card__image {
+        min-height: 100px;
+        background-color: #286580;
+        padding: 10px;
+        text-align: center;
+        color: #fff;
+    }
+
+    .card__image img {
+        width: 100%;
+        max-width: 100%;
+        display: block;
+    }
+
+    .card__content {
+        position: relative;
+    }
+
+    /* card action */
+    .card__action {
+        overflow: hidden;
+        padding-right: 1.6rem;
+        padding-left: 1.6rem;
+        padding-bottom: 1.6rem;
+    }
+     
+    .card__author {
+      text-align: center;
+    }
+
+    .card__share {
+        float: right;
+        position: relative;
+        margin-top: -42px;
+    }
+
+    .card-nav-icon {
+        display: inline-block !important;
+        width: 48px;
+        height: 48px;
+        line-height: 48px;
+        text-align: center;
+        border-radius: 50%;
+        background-color: #fff;
+        transition: all 0.3s ease;
+        outline: 0;
+        z-index: 2;
+
+        box-shadow: 
+                0 2px 4px rgba(0,0,0, 0.12),
+                0 2px 4px rgba(0,0,0, 0.24);
+    }
+
+
+    .card-nav-icon.nav-icon-next:before {
+        content: "\e080";
+        font-family:"Glyphicons Halflings";
+        color: #3498db;
+    }
+
+    .card-nav-icon.nav-icon-prev:before {
+        content: "\e079";
+        font-family:"Glyphicons Halflings";
+        color: #3498db;
+    }
+
+    .card-nav-icon:hover {
+        box-shadow: 
+            0 3px 6px rgba(0,0,0, 0.12),
+            0 3px 6px rgba(0,0,0, 0.24);
+
+        -webkit-transform: scale(1.2);
+        -moz-transform: scale(1.2);
+        -ms-transform: scale(1.2);
+        -o-transform: scale(1.2);
+        transform: scale(1.2);
+    }
+
+    .social-media-btn{
+        transition: all 0.3s ease;
+    }
+
+    .social-media-btn:hover {
+        -webkit-transform: scale(1.2);
+        -moz-transform: scale(1.2);
+        -ms-transform: scale(1.2);
+        -o-transform: scale(1.2);
+        transform: scale(1.2);
+    }
+
+    .bm-cross-button {
+        font-size: 20px;
+    }
+
+    .bm-icon {
+        color: #0CA4E5;
+    }
+
+    .bm-menu {
+      background: #286580;
+      padding: 2.5em 1.0em 0;
+      font-size: 1.15em;
+    }
+
+    /* Morph shape necessary with bubble or elastic */
+    .bm-morph-shape {
+      fill: #286580;
+    }
+
+
+    .bubble-in {
+/*      width: 0;
+      height: 0;*/
+      -webkit-transition: left 1s, bottom 1s, width 1s, height 1s; /* Safari */
+      transition: left 1s, bottom 1s, width 1s, height 1s;
+    }
+
+    .sign-in-and-register-mgr-tab-style {
+       width: 50%;
+       text-align: center;
+    }
+
+    .sign-in-and-register-mgr-tab-style .active {
+       background-color: red;
+    }
+
+    .sign-in-and-register-mgr-tab-style a {
+       margin-right: 0 !important;
+       border-radius: 0 !important;
+       font-family: 'Arial Rounded MT Bold', 'Helvetica Rounded', Arial, sans-serif;
+    }
+
+    .sign-in-and-register-mgr-modal .modal-content {
+      min-height: 320px;
+      z-index: 2147483647 !important;
+      border-radius: 0 !important;
+    }
+
+    .sign-in-and-register-mgr-modal .modal-body {
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+      padding-top: 0 !important;
+    }
+
+    .support-ad-modal .modal-content {
+      min-height: 320px;
+      z-index: 2147483647 !important;
+    }
+
+    .support-ad-modal .modal-body {
+      min-height: 320px;
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+      padding-top: 0 !important;
+    }
+
+    .modal-backdrop {
+      position: absolute !important;
+    }
+
+    .modal {
+      position: absolute !important;
+    }
+
+    .fixedModal {
+        position: fixed !important;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100% !important;
+        height: 100% !important;
+    }
+
+    .CircularProgressbar .CircularProgressbar-path {
+      stroke: #3e98c7;
+      stroke-linecap: round;
+      transition: stroke-dashoffset 0.5s ease 0s;
+    }
+
+    .CircularProgressbar .CircularProgressbar-trail {
+      stroke: #d6d6d6;
+    }
+
+    .CircularProgressbar .CircularProgressbar-text {
+      fill: #3e98c7;
+      font-size: 20px;
+      dominant-baseline: middle;
+      text-anchor: middle;
+    }
+
+    /* how to customize colors based on percentage */
+    .CircularProgressbar.complete_50 .CircularProgressbar-path {
+      stroke: #3e98c7;
+    }
+    .CircularProgressbar.complete_50 .CircularProgressbar-text {
+      fill: #3e98c7;
+    }
+    .CircularProgressbar.complete_75 .CircularProgressbar-path {
+      stroke: #f0ad4e;
+    }
+    .CircularProgressbar.complete_75 .CircularProgressbar-text {
+      fill: #f0ad4e;
+    }
+    .CircularProgressbar.complete_100 .CircularProgressbar-path {
+      stroke: #d9534f;
+    }
+    .CircularProgressbar.complete_100 .CircularProgressbar-text {
+      fill: #d9534f;
+    }
+
+    .bowl {
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: .7;
+      border-radius: 50%;
+      width: 58px;
+      height: 58px;
+      background: -moz-radial-gradient(center, ellipse cover, transparent 0%, transparent 76%, rgba(0, 0, 0, 0.65) 100%);
+      background: -webkit-radial-gradient(center, ellipse cover, transparent 0%, transparent 76%, rgba(0, 0, 0, 0.65) 100%);
+      background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 76%, rgba(0, 0, 0, 0.65) 100%);
+    }
+    .bowl:before {
+      overflow: hidden;
+      border-radius: 50%;
+      background: -moz-radial-gradient(center, ellipse cover, transparent 0%, transparent 60%, rgba(0, 0, 0, 0.65) 81%, black 100%);
+      background: -webkit-radial-gradient(center, ellipse cover, transparent 0%, transparent 60%, rgba(0, 0, 0, 0.65) 81%, black 100%);
+      background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 0.65) 81%, #000000 100%);
+      position: absolute;
+      width: 58px;
+      height: 58px;
+      z-index: 2;
+    }
+    .bowl:after {
+      width: 60px;
+      border-radius: 50%;
+      height: 5px;
+      background: #039be4;
+      position: absolute;
+      left: 50%;
+      margin-left: -30px;
+      bottom: 0;
+      z-index: 2;
+    }
+    .bowl .inner {
+      border-radius: 50%;
+      width: 58px;
+      height: 58px;
+      background: -moz-radial-gradient(center, ellipse cover, transparent 0%, transparent 76%, rgba(0, 0, 0, 0.65) 100%);
+      background: -webkit-radial-gradient(center, ellipse cover, transparent 0%, transparent 76%, rgba(0, 0, 0, 0.65) 100%);
+      background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 76%, rgba(0, 0, 0, 0.65) 100%);
+      overflow: hidden;
+      -webkit-backface-visibility: hidden;
+      -webkit-transform: translate3d(0, 0, 0);
+    }
+    
+    .fill {
+      -webkit-transition: top 2s;
+      transition: top 2s;
+    }
+    .bowl .waveShape {
+      -webkit-animation-name: waveAction;
+      -webkit-animation-iteration-count: infinite;
+      -webkit-animation-timing-function: linear;
+      -webkit-animation-duration: 0.5s;
+      width: 100px;
+      height: 100px;
+      fill: #039be4;
+    }
+
+    @-webkit-keyframes waveAction {
+      0% {
+        -webkit-transform: translate(-150px, 0);
+      }
+      100% {
+        -webkit-transform: translate(0, 0);
+      }
+    }
+
+    .circular-modal {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transform: translate(0, 25%) !important;
+    }
+
+    .circular-modal .modal-content {
+        border-radius: 100%;
+        width: 500px;
+        height: 500px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #0CA4E5;
+    }
+
+    .mobile-circular-modal {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transform: translate(0, 25%) !important;
+    }
+
+    .mobile-circular-modal .modal-content {
+        border-radius: 100%;
+        width: 300px;
+        height: 300px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #0CA4E5;
+    }
+
+    </style>
+    
+    <link rel="stylesheet" href="./bootstrap.957474c344c7.css">
+    <link rel="stylesheet" href="./app.b8c19e209808.css">
+</head>
+<body>
+
+    
+
+    <script type="text/javascript">
+        // Set a global object of our app's static file URLs for use in
+        // javascript.
+        window.staticFileUrls = {"img/logos/unknow.png": "https://goodblock-static.s3.amazonaws.com/static/img/logos/unknow.a84f5472ee5d.png", "img/kia/kia03.jpg": "https://goodblock-static.s3.amazonaws.com/static/img/kia/kia03.c2fafe8713d8.jpg", "img/kia/kia01.jpg": "https://goodblock-static.s3.amazonaws.com/static/img/kia/kia01.cbb2e8090d83.jpg", "img/background/bg8.jpg": "https://goodblock-static.s3.amazonaws.com/static/img/background/bg8.17e23bda6301.jpg", "img/kia/kia-mini.png": "https://goodblock-static.s3.amazonaws.com/static/img/kia/kia-mini.3eb3ab5edd21.png", "img/social-media/Charity_Milestone_20K_Raised.jpg": "https://goodblock-static.s3.amazonaws.com/static/img/social-media/Charity_Milestone_20K_Raised.8934834afb50.jpg", "img/logos/popcorn.png": "https://goodblock-static.s3.amazonaws.com/static/img/logos/popcorn.0406c38fe63c.png", "img/logos/gladly-logo-white-text.png": "https://goodblock-static.s3.amazonaws.com/static/img/logos/gladly-logo-white-text.31df43f15688.png", "img/logos/goodblock-logo-rectangle.png": "https://goodblock-static.s3.amazonaws.com/static/img/logos/goodblock-logo-rectangle.ea17f6a0e3a5.png", "img/logos/logo.svg": "https://goodblock-static.s3.amazonaws.com/static/img/logos/logo.afb98726961c.svg", "img/kia/kia05.jpg": "https://goodblock-static.s3.amazonaws.com/static/img/kia/kia05.f20ed9ce85ac.jpg", "img/logos/logo-text.svg": "https://goodblock-static.s3.amazonaws.com/static/img/logos/logo-text.2fe02672af1e.svg", "img/logos/yelp-logo.png": "https://goodblock-static.s3.amazonaws.com/static/img/logos/yelp-logo.b9bda6b0f624.png", "img/welcome/tad.png": "https://goodblock-static.s3.amazonaws.com/static/img/welcome/tad.0b9b01e56455.png", "img/background/educating.jpg": "https://goodblock-static.s3.amazonaws.com/static/img/background/educating.d0e85be81d89.jpg", "img/kia/kia00.jpg": "https://goodblock-static.s3.amazonaws.com/static/img/kia/kia00.3a17b19bc3da.jpg", "img/logos/logo-with-text.svg": "https://goodblock-static.s3.amazonaws.com/static/img/logos/logo-with-text.990226acf73b.svg", "img/pixel.png": "https://goodblock-static.s3.amazonaws.com/static/img/pixel.57b167e3f0e5.png", "img/social-media/twitter.png": "https://goodblock-static.s3.amazonaws.com/static/img/social-media/twitter.3d3b4ce16e29.png", "img/logos/logo-text-white.svg": "https://goodblock-static.s3.amazonaws.com/static/img/logos/logo-text-white.269e76858d88.svg", "img/welcome/adblock.png": "https://goodblock-static.s3.amazonaws.com/static/img/welcome/adblock.5ac18485768d.png", "img/kia/kia04.jpg": "https://goodblock-static.s3.amazonaws.com/static/img/kia/kia04.774869ceabbc.jpg", "img/kia/kia02.jpg": "https://goodblock-static.s3.amazonaws.com/static/img/kia/kia02.32d625849792.jpg", "img/logos/business_medium_square.png": "https://goodblock-static.s3.amazonaws.com/static/img/logos/business_medium_square.ec91c6e75078.png", "img/logos/heart-white.png": "https://goodblock-static.s3.amazonaws.com/static/img/logos/heart-white.e4e55fc0c1cb.png", "img/mg-icons/icn-badge@2x.png": "https://goodblock-static.s3.amazonaws.com/static/img/mg-icons/icn-badge@2x.9eea9fbf4622.png", "img/logos/heart-blue.png": "https://goodblock-static.s3.amazonaws.com/static/img/logos/heart-blue.9e6ba5900f6a.png", "img/welcome/charity-logos.png": "https://goodblock-static.s3.amazonaws.com/static/img/welcome/charity-logos.f99ac070e157.png", "img/social-media/tumblr.png": "https://goodblock-static.s3.amazonaws.com/static/img/social-media/tumblr.c4e8fe969bb8.png", "img/logos/tmdb-logo.png": "https://goodblock-static.s3.amazonaws.com/static/img/logos/tmdb-logo.9b3f9c24d9fd.png", "img/social-media/fb.png": "https://goodblock-static.s3.amazonaws.com/static/img/social-media/fb.6ad30f08016b.png", "img/kia/brand.png": "https://goodblock-static.s3.amazonaws.com/static/img/kia/brand.8a47acde49df.png", "img/kia/kia06.jpg": "https://goodblock-static.s3.amazonaws.com/static/img/kia/kia06.7d37e02e36b7.jpg", "img/background/educate.jpg": "https://goodblock-static.s3.amazonaws.com/static/img/background/educate.2beec5a53ab4.jpg", "img/social-media/facebook-bk-white.png": "https://goodblock-static.s3.amazonaws.com/static/img/social-media/facebook-bk-white.318f22455586.png", "img/charities/charity-post-donation-images/room-to-read.jpg": "https://goodblock-static.s3.amazonaws.com/static/img/charities/charity-post-donation-images/room-to-read.7842a35c58ac.jpg", "img/kia/kia07.jpg": "https://goodblock-static.s3.amazonaws.com/static/img/kia/kia07.d64234889fb2.jpg"};
+        window.resetPasswordData = {"reset": false, "uidb64": null, "pr_token": null};
+        window.accountConfirmData = {"confirm_account": false, "confirm_key": null};
+
+        // For app reloading.
+        window.appJsHash = "1955e3a255c7b6d0990e98692d2051b8";
+        // window.pageLoadTime = new Date();
+    </script>
+
+    <img id="ad1" src="./imgad">
+    <div id="app-base"><div data-reactroot=""><span><div><span id="goodblock-icon-manager"><span></span><!-- react-empty: 5 --></span></div><span><span></span><span data-test-id="app-tests-mgr"></span><span data-test-id="goodblock-tab-sync"></span></span></span></div></div>
+    <script src="./logger-script.bf8de74c7fd1.js.download"></script>
+    <script src="./app.1d65ad8acaaf.js.download"></script>
+    <script type="text/javascript">
+    function error() {
+        if(document && document.body && document.body.innerHTML) { 
+          var span = document.createElement('span');
+          span.id = 'ghost-detected';
+          // Append container to body.
+          var body = document.getElementsByTagName("body")[0];
+          body.appendChild(span);
+        }
+    }
+    </script>
+
+    
+
+</body></html>
