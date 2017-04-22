@@ -1,63 +1,106 @@
 [
   {
-    "title": "Rensselaer Union",
-    "latitude": "42.729948799999995",
-    "longitude": "-73.6766655"
+   "title": "Rensselaer Union",
+  "latitude": "42.729948799999995",
+  "longitude": "-73.6766655",
+  "rooms": [{
+    "floors": {
+      "1": ["MOTHER'S", "GAMES ROOM", "RATHSKELLER"],
+      "2": ["2000,MCNEIL ROOM", "2124,MULTI-CULTURAL LONGUE", "2124,MEETING ROOM", "2424,MEETING ROOM"],
+      "3": ["3202,MEETING ROOM", "3210,MEETING ROOM", "3502,MEETING ROOM", "3510,MEETING ROOM", "3511,MEETING ROOM", "3602,MEETING ROOM",
+            "3606,EXHIBITION"]
+        }
+    }]
   }, 
-  {
-    "title": "Academy Hall Parking Lot",
-    "latitude": "42.72752",
-    "longitude": "-73.67958"
-  },
   {
     "title": "Academy Hall – Student Life Services Center",
     "latitude": "42.7274",
-    "longitude": "-73.67862"
-  },
-  {
-    "title": "Admissions Building",
-    "latitude": "42.73061",
-    "longitude": "-73.67557"
+    "longitude": "-73.67862",
+    "rooms": [{
+    "floors": {
+      "1":["Academy Hall Dance Studio"],
+      "3": ["Academy Hall Auditorium"]
+        }
+    }]
   },
   {
     "title": "Alumni House, Heffner",
     "latitude": "42.73283",
-    "longitude": "-73.67815"
-  },
-  {
-    "title": "Alumni Sports and Recreation Center",
-    "latitude": "42.72843",
-    "longitude": "-73.67668"
+    "longitude": "-73.67815",
+    "rooms": [{
+    "floors": {
+      "1": ["1007A,MEETING ROOM"],
+      "2": ["2009,MEETING ROOM", "2006,MEETING ROOM"],
+      "3": ["2005,MEETING ROOM"]
+        }
+    }]
   },
   {
     "title": "Amos Eaton Hall",
     "latitude": "42.73016",
-    "longitude": "-73.68257"
+    "longitude": "-73.68257",
+    "rooms": [{
+    "floors": {
+      "1": ["104,LAB RES COMP SCI","106,LAB RES COMP SCI","107,OFFICE ACAD COMP SCI","108,OFFICE ACAD COMP SCI","109,OFFICE ACAD COMP SCI",
+            "110,OFFICE GRAD COMP SCI"],
+      "2": ["204,LAB RESEARCH", "205,OFFICE GRAD COMP SCI","206,OFFICE GRAD COMP SCI","207,LAB RES COMP SCI","208,OFFICE ACAD COMP SCI","209,LAB RESEARCH COMP SCI"
+            "210,LAB RESEARCH COMP SCI","211,LAB RESEARCH COMP SCI","214,CLASS LEC REGISTRAR","215,CLASS HYBRID REGISTRAR","216,CLASS LAPTOP REGISTRAR",
+            "217,LAB RES COMP SCI"],
+      "3": ["302,OFFICE ACAD MATH","304,OFF COPY MATH","305,OFFICE ACAD MATH","306,OFFICE ACAD MATH","307,OFFICE ACAD MATH","311,LAB RES COMP"],
+      "4": ["400C,STUDY ROOM","401,LOUNGE","402,CONFERENCE","404,OFFICE ACAD MATH","405,OFFICE ACAD MATH","406,OFFICE ACAD MATH","407,OFFICE P DOC MATH",
+            ,"408,OFFICE ACAD MATH","409,OFFICE ACAD MATH","411,CONFERENCE","412,OFFICE ACAD MATH"]
+        }
+    }]
   },
   {
     "title": "Barton Hall",
     "latitude": "42.72898",
-    "longitude": "-73.6741"
+    "longitude": "-73.6741",
+    "rooms": [{
+    "floors": {
+      "1": ["1007A,MEETING ROOM"],
+      "2": ["214,CLASS LEC", "215,CLASS HYBRID","216,CLASS LAPTOP","217,LAB RES COMP"]
+        }
+    }]
   },
   {
     "title": "Biotechnology and Interdisciplinary Studies Building",
     "latitude": "42.72827",
-    "longitude": "-73.67906"
+    "longitude": "-73.67906",
+    "rooms": [{
+    "floors": {
+      "1": ["1375,MEETING ROOM BIOTECH ADMN","1356,VACANT LAB RES SV BIOTECH LABS","1346,LAB RESEARCH BIOTECH LABS","1342,LAB RES SV BIOTECH LABS"],
+      "2": ["2353,CONFERENCE BIOTECH ADMN","2153,OFFICE ACAD BIOTECH LABS","2151A,OFFICE ACAD BIOTECH LABS","2149,OFFICE ACAD BIOTECH LABS",
+            "2147,OFFICE ACAD BIOTECH LABS","2145,OFFICE GRAD BIOTECH LABS","2143,OFFICE GRAD BIOTECH LABS","2141,OFFICE P DOC BIOTECH LABS"],
+      "3": [],
+      "4": [],
+      "5": []
+        }
+    }]
   },
   {
     "title": "Blaw Knox 1",
     "latitude": "42.7321",
-    "longitude": "-73.68076"
-  },
-  {
-    "title": "Boiler House",
-    "latitude": "42.73111",
-    "longitude": "-73.68196"
+    "longitude": "-73.68076",
+    "rooms": [{
+    "floors": {
+      "1": [],
+      "2": [],
+      "3": []
+        }
+    }]
   },
   {
     "title": "Bray Hall",
     "latitude": "42.72868",
-    "longitude": "-73.67354"
+    "longitude": "-73.67354",
+    "rooms": [{
+    "floors": {
+      "1": [],
+      "2": [],
+      "3": []
+        }
+    }]
   },
   {
     "title": "Bryckwyck",
@@ -98,11 +141,6 @@
     "title": "Crockett Hall",
     "latitude": "42.72823",
     "longitude": "-73.67332"
-  },
-  {
-    "title": "Darrin Communications Center",
-    "latitude": "42.72942",
-    "longitude": "-73.67927"
   },
   {
     "title": "Darrin Communications Center",
@@ -315,103 +353,3 @@
     "longitude": "-73.66623"
   }
 ]
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
