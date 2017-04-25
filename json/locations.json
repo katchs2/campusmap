@@ -42,7 +42,7 @@
     "rooms": [{
     "floors": {
       "1": ["1007A,MEETING ROOM"],
-      "2": ["214,CLASS LEC", "215,CLASS HYBRID","216,CLASS LAPTOP","217,LAB RES COMP"],
+      "2": ["214,CLASS LEC", "215,CLASS HYBRID","216,CLASS LAPTOP","217,LAB RES COMP"]
         }
     }]
   },
@@ -53,7 +53,7 @@
     "rooms": [{
     "floors": {
       "1": ["1007A,MEETING ROOM"],
-      "2": ["214,CLASS LEC", "215,CLASS HYBRID","216,CLASS LAPTOP","217,LAB RES COMP"],
+      "2": ["214,CLASS LEC", "215,CLASS HYBRID","216,CLASS LAPTOP","217,LAB RES COMP"]
         }
     }]
   },
@@ -65,7 +65,9 @@
     "floors": {
       "1": ["1375,MEETING ROOM","1353,MEETING SERV","1355,MEETING SERV"],
       "2": ["214,CLASS LEC", "215,CLASS HYBRID","216,CLASS LAPTOP","217,LAB RES COMP"],
-      "3": []
+      "3": ["3145,CONFERENCE BIOTECH ADMN","3125,CONFERENCE BIOTECH ADMN","3212,LOUNGE BIOTECH ADMN","3224.09,CONFERENCE BIOTECH LABS",
+            "3239,CONFERENCE BIOTECH LABS","3353,CONFERENCE BIOTECH ADMN"],
+      "4": ["4353,CONFERENCE BIOTECH ADMN","4145,CONFERENCE BIOTECH ADMN"]
         }
     }]
   },
@@ -75,23 +77,15 @@
     "longitude": "-73.68076",
     "rooms": [{
     "floors": {
-      "1": [],
-      "2": [],
-      "3": []
+      "1": ["108,CONFERENCE","115,LAB RESEARCH PHYSICS"],
+      "2": ["201,CLASS LAB MSA"]
         }
     }]
   },
   {
     "title": "Bray Hall",
     "latitude": "42.72868",
-    "longitude": "-73.67354",
-    "rooms": [{
-    "floors": {
-      "1": [],
-      "2": [],
-      "3": []
-        }
-    }]
+    "longitude": "-73.67354"
   },
   {
     "title": "Bryckwyck",
@@ -106,7 +100,14 @@
   {
     "title": "Carnegie Building",
     "latitude": "42.7304",
-    "longitude": "-73.6831"
+    "longitude": "-73.6831",
+     "rooms": [{
+    "floors": {
+      "1": ["101,CLASSROOM","102,CLASSROOM","106,CLASSROOM","112,CLASSROOM","113,CLASSROOM"],
+      "2": ["201,CLASSROOM","205,CLASSROOM","206,CLASSROOM","208,CLASSROOM","208A,CLASS SV","210A,CLASS SV"],
+      "3": ["301A,CONFERENCE"]
+        }
+    }]
   },
   {
     "title": "Cary Hall",
@@ -116,7 +117,12 @@
   {
     "title": "Cogswell Laboratory",
     "latitude": "42.7281",
-    "longitude": "-73.6812"
+    "longitude": "-73.6812",
+    "rooms": [{
+    "floors": {
+      "1": ["108,CONFERENCE","115,LAB RESEARCH PHYSICS"]
+        }
+    }]
   },
   {
     "title": "Colonie Apartments",
@@ -136,7 +142,13 @@
   {
     "title": "Darrin Communications Center",
     "latitude": "42.72942",
-    "longitude": "-73.67927"
+    "longitude": "-73.67927",
+    "rooms": [{
+    "floors": {
+      "2": ["232,CLASSROOM","235,CLASSROOM","236,CLASSROOM","239,CLASSROOM","240,CLASSROOM"],
+      "3": ["308,CLASS LEC","314,CLASS","318,CLASS","324,CLASS","330,CLASS","337,CLASS"]
+        }
+    }]
   },
   {
     "title": "Davison Hall",
@@ -151,7 +163,12 @@
   {
     "title": "Empire State Hall",
     "latitude": "42.72823",
-    "longitude": "-73.68174"
+    "longitude": "-73.68174",
+    "rooms": [{
+    "floors": {
+      "1": ["112A,CLASS LAB CHEMISTRY","112,CLASS LAB CHEMISTRY","113,CLASS LAB CHEMISTRY"]
+        }
+    }]
   },
   {
     "title": "Experimental Media and Performing Arts Center",
@@ -166,17 +183,25 @@
   {
     "title": "Greene Building",
     "latitude": "42.72996",
-    "longitude": "-73.6811"
+    "longitude": "-73.6811",
+    "rooms": [{
+    "floors": {
+      "1": ["120,CLASSROOM","101,CLASS LEC"],
+      "2": ["201,CLASS LAB","204,CLASSROOM"],
+      "3": ["108,CONFERENCE","115,LAB RESEARCH PHYSICS"],
+      "4": ["401,CLASS LEC"]
+        }
+    }]
   },
   {
     "title": "Gurley Building",
     "latitude": "42.73279",
-    "longitude": "-73.68677"
-  },
-  {
-    "title": "H Building",
-    "latitude": "42.73256",
-    "longitude": "-73.67919"
+    "longitude": "-73.68677",
+    "rooms": [{
+    "floors": {
+      "3": ["340,CLASSROOM"]
+        }
+    }]
   },
   {
     "title": "Hall Hall",
@@ -196,7 +221,17 @@
   {
     "title": "J. Erik Jonsson Engineering Center",
     "latitude": "42.72959",
-    "longitude": "-73.68023"
+    "longitude": "-73.68023",
+    "rooms": [{
+    "floors": {
+      "1": ["1012,CLASS LAB","1219,CLASS LAB","1202,CLASS LAB","1042F,CLASS LAB","1302,CLASS LAB"],
+      "2": ["2204,CLASS LABA","2332,CLASS LAB"],
+      "3": ["3210,CLASS","3207,CLASS","3108,CLASS","3117,CLASS","3332,CLASS","3232,CLASS","2303B,CLASS LAB","2132,CLASS LAB","2204,CLASS LAB"],
+      "4": ["4107,CLASS","4118,CLASS LAB","4309,CLASS PROB","4319,CLASS LAB","4304,CLASS","4201,CLASS","4201A,CLASS"],
+      "5": ["5312,CLASSROOM","5107,CLASS LAB","5119,CLASS PROB","5205,CLASS LAB","5213,CLASS LAB","5312,CLASSROOM"],
+      "6": ["6114,CLASS LAB","6303,CLASS LAB","6309,CLASS","6314,CLASS"]
+        }
+    }]
   },
   {
     "title": "J Building / Incubator Center",
@@ -211,7 +246,15 @@
   {
     "title": "Jonsson-Rowland Science Center",
     "latitude": "42.72876",
-    "longitude": "-73.68033"
+    "longitude": "-73.68033",
+    "rooms": [{
+    "floors": {
+      "1": ["1W01,CLASS"],
+      "2": ["2W05,CLASS LAB PHYSICS","2C13,CLASS","2C25,CLASS","2C30,CLASS","2C22,CLASS","2C14,CLASS","2C06,CLASS","2W01,CLASS LAB PHYSICS","2W05,CLASS LAB PHYSICS"],
+      "3": ["3C12,CLASS LAB PHYSICS","3C14,CLASS LAB PHYSICS","3W09,CLASS LAB BIOLOGY","3W24A,CLASS LAB BIOLOGY","3W01,CLASS LAB BIOLOGY",
+            "3W02,CLASS LAB BIOLOGY","3W16,CLASS LAB BIOLOGY","3W13,CLASSROOM","3W18,CLASS LAB BIOLOGY","3C26C,CLASS LAB PHYSICS"]
+        }
+    }]
   },
   {
     "title": "LINAC Facility",
@@ -221,22 +264,48 @@
   {
     "title": "Lally Hall",
     "latitude": "42.73003",
-    "longitude": "-73.68183"
+    "longitude": "-73.68183",
+    "rooms": [{
+    "floors": {
+      "0": ["02,CLASS"],
+      "1": ["104,CLASS","102,CLASS"]
+        }
+    }]
   },
   {
     "title": "Low Center for Industrial Innovation",
     "latitude": "42.72926",
-    "longitude": "-73.6786"
+    "longitude": "-73.6786",
+    "rooms": [{
+    "floors": {
+      "1": ["1027A,CLASS LAB","1027E,CLASS LAB"],
+      "2": ["2037,CLASS LAB","232,CLASSROOM","235,CLASSROOM","236,CLASSROOM","239,CLASSROOM","240,CLASSROOM"],
+      "3": ["3051,CLASS LEC","3039,CLASSROOM","3045,CLASSROOM","3112,CLASS","3116,CLASS","3130,CLASS","3211,CLASSROOM","3206,CLASSROOM"],
+      "4": ["4034,CLASS","4040,CLASS","4050,CLASS LEC"],
+      "5": ["5126,CLASS LAB","5118,CLASS LAB","5222,CLASS LAB"],
+      "6": ["6116,CLASS LAB","6118,CLASS LAB"]
+        }
+    }]
   },
   {
     "title": "Materials Research Center",
     "latitude": "42.72838",
-    "longitude": "-73.68245"
+    "longitude": "-73.68245",
+    "rooms": [{
+    "floors": {
+      "1": ["136,CLASS"]
+        }
+    }]
   },
   {
     "title": "Mueller Center",
     "latitude": "42.7289",
-    "longitude": "-73.67693"
+    "longitude": "-73.67693",
+    "rooms": [{
+    "floors": {
+      "1": ["2104,CLASSROOM"]
+        }
+    }]
   },
   {
     "title": "Nason Hall",
@@ -246,7 +315,12 @@
   {
     "title": "Nuclear Engineering and Science Building",
     "latitude": "42.7322",
-    "longitude": "-73.66293"
+    "longitude": "-73.66293",
+    "rooms": [{
+    "floors": {
+      "1": ["106,CLASS LEC"]
+        }
+    }]
   },
   {
     "title": "North Hall",
@@ -261,7 +335,13 @@
   {
     "title": "Pittsburgh Building",
     "latitude": "42.73112",
-    "longitude": "-73.68319"
+    "longitude": "-73.68319",
+    "rooms": [{
+    "floors": {
+      "4": ["4206,CLASS","4114,CLASS"],
+      "5": ["5114,CLASS","5216,CLASS"]
+        }
+    }]
   },
   {
     "title": "Quadrangle Complex (Quad)",
@@ -281,7 +361,14 @@
   {
     "title": "Ricketts Building",
     "latitude": "42.73085",
-    "longitude": "-73.67961"
+    "longitude": "-73.67961",
+    "rooms": [{
+    "floors": {
+      "0": ["008A,CLASS LAB"],
+      "1": ["108,CONFERENCE","115,LAB RESEARCH PHYSICS"],
+      "2": ["203,CLASS LEC","212,CLASSROOM","208,CLASSROOM","211, CLASS LEC"]
+       }
+    }]
   },
   {
     "title": "Robison Pool",
@@ -296,7 +383,17 @@
   {
     "title": "Russell Sage Laboratory",
     "latitude": "42.73083",
-    "longitude": "-73.68157"
+    "longitude": "-73.68157",
+    "rooms": [{
+    "floors": {
+      "1": ["1301,CLASS LAB STS","115,LAB RESEARCH PHYSICS"],
+      "2": ["2707,CLASSROOM","2715,CLASS","2704,CLASS","2701,CLASSROOM","2701,CLASSROOM","2300D,CLASS LAB","2211,CLASS LAB STS","2112,CLASS LAPTOP"
+            ,"2202,CLASSROOM"],
+      "3": ["3101,CLASS","3303,CLASS LEC","3510,CLASS LEC","3704,CLASS LEC","3705,CLASSROOM","3713,CLASS LEC"],
+      "4": ["4101,CLASS","4112,CLASSROOM","4203,CLASSROOM","4711,CLASS LAB"],
+      "5": ["5101,CLASS","5510,CLASSROOM","5711,CLASS","5203,CLASSROOM"]
+        }
+    }]
   },
   {
     "title": "Seismograph Laboratory",
@@ -321,7 +418,17 @@
   {
     "title": "Walker Laboratory",
     "latitude": "42.7308",
-    "longitude": "-73.68246"
+    "longitude": "-73.68246",
+    "rooms": [{
+    "floors": {
+      "2": ["2230,CLASS LAB","2229,CLASS LAB","2226,CLASS LAB","2217,CLASS","2214.01,CLASS LAB BIOLOGY","2105,CLASS LAB CHEMISTRY","2228,CLASS LAB"
+      ,"2220,CLASS LAB","2219,CLASS LAB","2222,CLASS LAB"],
+      "3": ["3229,CLASS LAB","3113,CLASS LAB","3109,CLASS LAB CHEMISTRY","3103,CLASS LAB CHEMISTRY","3214,CLASS LAB CHEMISTRY","3104,CLASS LAB","3201,CLASS LAB",
+      "3222,CLASS","3229,CLASS LAB"],
+      "5": ["5219,CLASS LAB CHEMISTRY","5113,CLASS","5214,CLASS LAB","5213,CLASS LAB CHEMISTRY"],
+      "6": ["6219,CLASS LAB CHEMISTRY","6113,CLASS","6213,CLASS LAB CHEMISTRY","6103,CLASS LAB","6106,CLASS LAB"]
+      }
+    }]
   },
   {
     "title": "Warren Hall",
@@ -331,17 +438,22 @@
   {
     "title": "West Hall",
     "latitude": "42.73165",
-    "longitude": "-73.68307"
+    "longitude": "-73.68307",
+    "rooms": [{
+    "floors": {
+      "0": ["G11A,CLASS LAB ARTS","G12,CLASS LAB ARTS","G15,CLASS LAB ARTS","G15B,CLASS LAB ARTS"],
+      "1": ["112,CLASSROOM ARTS","112A,CLASS","112C,CLASS","112B,CLASS"],
+      "2": ["220,CLASS","218,CLASS","200J,CLASS","218A,CLASS","211A,CLASS LAB ARTS","211B,CLASS LAB ARTS","211C,CLASS LAB ARTS"],
+      "3": ["3229,CLASS LAB","3113,CLASS LAB","3109,CLASS LAB CHEMISTRY","3103,CLASS LAB CHEMISTRY","3214,CLASS LAB CHEMISTRY","3104,CLASS LAB","3201,CLASS LAB",
+      "3222,CLASS","3229,CLASS LAB"],
+      "4": ["411C,CLASS LAB","413.02,CLASSROOM ART","411A,CLASS LAB","411B,CLASS LAB ART","414B,CLASS LAB ART","411C,CLASS LAB ART"]
+    }
+    }]
   },
   {
     "title": "87 Gymnasium",
     "latitude": "42.73075",
     "longitude": "-73.67875"
-  },
-  {
-    "title": "Seismograph Laboratory",
-    "latitude": "42.73101",
-    "longitude": "-73.66623"
   }
 ]
 

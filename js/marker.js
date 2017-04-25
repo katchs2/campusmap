@@ -25,7 +25,7 @@ function initMap() {
         var position = new google.maps.LatLng(location.latitude,location.longitude);
         var title = location.title;
         // Create a marker per location, and put into markers array.
-         var marker = new google.maps.Marker({
+        var marker = new google.maps.Marker({
           position: position,
           title: title,
           animation: google.maps.Animation.DROP,
