@@ -1,0 +1,25 @@
+.white-space{
+  flex: 1;
+  height: 100%;
+}
+
+.sidebar{
+  diplay: flex;
+  flex-direction: row;
+  flex: 1;
+}
+
+.sb{
+  diplay: flex;
+  flex-direction: row;
+  width: 30%;
+  margin-right: 15%;
+  height: 100%;
+}
+
+.mapmap{
+  diplay: flex;
+  flex-direction: row;
+  width: 55%;
+  height: 100%;
+}
