@@ -20,7 +20,8 @@ function initMap() {
   // Get all notable locations from a JSON file
   $(document).ready(function(){
     $.getJSON("json/locations.json", function(json) {
-      $.each(json, function(index, location) {
+      $.each(json.location, function(index, location) {
+        console.log(location.title);
          // Get the position from the location object
         var position = new google.maps.LatLng(location.latitude,location.longitude);
         var title = location.title;
@@ -53,6 +54,7 @@ function populateInfoWindow(marker, infowindow) {
     infowindow.marker = marker;
     infowindow.setContent('<div>' + marker.title + '</div>');
     infowindow.open(map, marker);
+    // getClassrooms(marker);
     // Make sure the marker property is cleared if the infowindow is closed.
     infowindow.addListener('closeclick', function() {
       infowindow.marker = null;
@@ -77,3 +79,24 @@ function hideListings() {
     markers[i].setMap(null);
   }
 }
+
+// // This function displays the classrooms for a marker when called. It also displays the Display Classrooms option for a marker.
+function getClassrooms(marker) {
+  show the view clssrooms button
+  document.getElementById('view-classrooms').style.display="block";  
+  var classrooms;
+  $(document).ready(function(){
+    $.getJSON("json/locations.json", function(json) {
+      $.each(json.location, function(index, location) {
+        if (location.title == marker.title) {
+          console.log(title)
+          classrooms = location.rooms;
+          return;
+        }
+        });
+      });
+    });
+  infowindow.addListener('closeclick', function() {
+    document.getElementById('show-classrooms').style.display="none";
+  });
+  });
