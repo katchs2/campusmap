@@ -1,4 +1,7 @@
-// This code will mainly be used to add maarkers to the map
+/* 
+This code will mainly be used to add maarkers to the map, but it also
+initializes the map which is centered at the Rensselaer Union.
+*/
 
 /*
 Create an array for all the new markers made form locations.json.
@@ -16,22 +19,21 @@ function initMap() {
   });
   var largeInfowindow = new google.maps.InfoWindow();
 
-  // Get all notable locations from a JSON file
+  // Get all notable location information from the JSON file
   $(document).ready(function(){
     $.getJSON("json/locations.json", function(json) {
-      $.each(json.location, function(index, location) {
-         // Get the position from the location object
+      $.each(json.locations, function(index, location) {
+         // Create marker objects and stroe them
         var position = new google.maps.LatLng(location.latitude,location.longitude);
         var title = location.title;
-        // Create a marker per location, and put into markers array.
         var marker = new google.maps.Marker({
           position: position,
           title: title,
           animation: google.maps.Animation. DROP
         });
-        // Push the marker to our array of markers.
         markers.push(marker);
         // Create an onclick event to open an infowindow at each marker.
+        // It will display the title of the location
         marker.addListener("click", function() {
           populateInfoWindow(this, largeInfowindow);
         });
@@ -39,13 +41,16 @@ function initMap() {
     });
   });
 
+  // Buttons to show and hide map markers
   document.getElementById("show-listings").addEventListener("click", showListings);
   document.getElementById("hide-listings").addEventListener("click", hideListings);
 }
 
-// This function populates the infowindow when the marker is clicked. We'll only allow
-// one infowindow which will open at the marker that is clicked, and populate based
-// on that markers position.
+/*
+This function populates the infowindow when the marker is clicked. We'll only allow
+one infowindow which will open at the marker that is clicked, and populate based
+on that markers position. It also displays all the classrooms for a location.
+*/
 function populateInfoWindow(marker, infowindow) {
   // Check to make sure the infowindow is not already opened on this marker.
   if (infowindow.marker != marker) {
@@ -54,7 +59,10 @@ function populateInfoWindow(marker, infowindow) {
     infowindow.setContent("<div>" + marker.title + "</div>");
     infowindow.open(map, marker);
     getClassrooms(marker);
-    // Make sure the marker property is cleared if the infowindow is closed.
+    /*
+    Make sure the marker property is cleared and the "View Classrooms" button is hissen 
+    if the infowindow is closed.
+    */
     infowindow.addListener('closeclick', function() {
       document.getElementById('view-classrooms').style.display="none";
       infowindow.marker = null;
@@ -62,10 +70,12 @@ function populateInfoWindow(marker, infowindow) {
   }
 }
 
-// This function will loop through the markers array and display them all.
+/*
+This function will display markers on the map. It will also extend the boundaries of the map 
+to accomadate each marker.
+*/
 function showListings() {
   var bounds = new google.maps.LatLngBounds();
-  // Extend the boundaries of the map for each marker and display the marker
   for (var i = 0; i < markers.length; i++) {
     markers[i].setMap(map);
     bounds.extend(markers[i].position);
@@ -73,25 +83,25 @@ function showListings() {
   map.fitBounds(bounds);
 }
 
-// This function will loop through the listings and hide them all.
+// This function hides all map markers.
 function hideListings() {
   for (var i = 0; i < markers.length; i++) {
     markers[i].setMap(null);
   }
 }
 
-// This function displays the classrooms for a marker when called. It also displays the Display Classrooms option for a marker.
+// This function displays the classrooms for a marker in a scrollable sidebar.
 function getClassrooms(marker) {
-  // show the view clssrooms button, and if the building has classrooms, get them from the file
   var classrooms;
   $(document).ready(function(){
     $.getJSON("json/locations.json", function(json) {
-      $.each(json.location, function(index, location) {
+      $.each(json.locations, function(index, location) {
         if (location.title === marker.title) {
           if ("rooms" in location) {
-            $.each(location.rooms, function(floor) {
-              console.log(location.rooms.floor,"this is a floor number");
-            });
+            alert(location.title,"has rooms!");
+            $.each(location.rooms, function(floor,room) {
+              alert();
+            })
           }
         }
         });
