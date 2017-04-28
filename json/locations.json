@@ -1,20 +1,17 @@
 {
-"location": 
-  [
+"location":[
     {
      "title": "Rensselaer Union",
     "latitude": "42.729948799999995",
     "longitude": "-73.6766655",
-    "rooms": [{
-      "floors": {
+    "rooms":[{ "floors": {
         "1": ["MOTHER'S", "GAMES ROOM", "RATHSKELLER"],
-        "2": ["2000,MCNEIL ROOM", "2124,MULTI-CULTURAL LONGUE", "2124,MEETING ROOM", "2424,MEETING ROOM"],
+        "2": ["2000,MCNEIL ROOM", "2124,MULTI-CULTURAL LOUNGUE", "2124,MEETING ROOM", "2424,MEETING ROOM"],
         "3": ["3202,MEETING ROOM", "3210,MEETING ROOM", "3502,MEETING ROOM", "3510,MEETING ROOM", "3511,MEETING ROOM", "3602,MEETING ROOM",
               "3606,EXHIBITION"]
           }
       }]
-    }, 
-    {
+    },{
       "title": "Academy Hall – Student Life Services Center",
       "latitude": "42.7274",
       "longitude": "-73.67862",
@@ -196,24 +193,9 @@
       }]
     },
     {
-      "title": "Gurley Building",
-      "latitude": "42.73279",
-      "longitude": "-73.68677",
-      "rooms": [{
-      "floors": {
-        "3": ["340,CLASSROOM"]
-          }
-      }]
-    },
-    {
       "title": "Hall Hall",
       "latitude": "42.72851",
       "longitude": "-73.67535"
-    },
-    {
-      "title": "Hedley Building",
-      "latitude": "42.73786",
-      "longitude": "-73.68675"
     },
     {
       "title": "Houston Field House",
@@ -354,11 +336,6 @@
       "title": "Rensselaer Apartment Housing A Site (RAHP A)",
       "latitude": "42.73076",
       "longitude": "-73.66966"
-    },
-    {
-      "title": "Rice Building",
-      "latitude": "42.73121",
-      "longitude": "-73.69333"
     },
     {
       "title": "Ricketts Building",
