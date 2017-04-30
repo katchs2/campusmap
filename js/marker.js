@@ -135,7 +135,7 @@ function getClassrooms(marker) {
                 var span = document.createElement("span");  
                 span.setAttribute("class","badge badge-info badge-pill");
                 span.appendChild(document.createTextNode(floors[i].classrooms.length));
-                li.appendChild(document.createTextNode(floors[i].num));
+                li.appendChild(document.createTextNode("Floor #"+floors[i].num));
                 li.appendChild(span);
                 li.setAttribute("id", floors[i].num);
                 li.setAttribute("class", "list-group-item");
