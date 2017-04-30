@@ -27,6 +27,9 @@ h1 {
 #view-floorplans {
   width: 48%;
 }
+#floor-group {
+  display: none;
+}
 .options-box {
   background: #fff;
   border: 1px solid #999;
@@ -45,6 +48,11 @@ h1 {
   text-align: left;
   padding: 12px;
   width: 97%;
+}
+.panel-default {
+  text-align: left;
+  margin: none;
+  cursor: pointer;
 }
 .badge:hover {
   color: #ffffff;
