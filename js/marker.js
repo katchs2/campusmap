@@ -149,6 +149,7 @@ function getClassrooms(marker) {
                 panel_heading.appendChild(panel_title);
                 panel_heading.setAttribute("class","panel-heading");
                 panel_collapse.setAttribute("class","panel-collapse collapse");
+                panel_collapse.setAttribute("id", floors[i].num);
                 panel.appendChild(panel_heading);
                 panel.appendChild(panel_collapse);
                 panel.setAttribute("class","panel panel-default");
@@ -179,15 +180,22 @@ function getClassrooms(marker) {
             for (var j = 0; j < floors.length; j++) {
               if (floors[j].num === this.id) {
                 floor_object = floors[j];
+                break;
               }
             }  
-            console.log(floor_object);
-            // for(var i = 0; i < result[0].classrooms.length; i++) {
-            //   console.log(result[0].classrooms[i]);
-            //   panel_collapse = document.getElementById.getElementsByClassName("panel-collapse");
-            //   <div class="panel-body">Panel Body</div>
-            //     <div class="panel-footer">Panel Footer</div>
-            // }
+            
+            for(var i = 0; i < floor_object.classrooms.length; i++) {
+              var panel_body = document.createElement("div");
+              panel_body.appendChild(document.createTextNode(floor_object.classrooms[i]));
+              if (i === floor_object.classrooms.length - 1) {
+                panel_body.setAttribute("class", "panel-footer");
+              }
+              else {
+                panel_body.setAttribute("class", "panel-body");
+              }              
+              // console.log(document.getElementsByClassName("panel-collapse"));
+              // .getElementById(this.id).appendChild(panel_body);
+            }
           });
         }
       });
