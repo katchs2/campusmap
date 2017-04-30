@@ -14,14 +14,15 @@
   <body>
     <div class="container">
       <div class="options-box">
-        <h1>Find a Building or Classroom</h1>
+        <h1 id="display-title">Find a Building or Classroom</h1>
         <div>
           <input class= "btn btn-default" id="show-listings" type="button" value="Show Listings">
           <input class= "btn btn-default" id="hide-listings" type="button" value="Hide Listings">
-          <input class="btn btn-default"  id="view-floorplans" type="button" value="View Floorplans" 
+          <input class="btn btn-default btn-primary"  id="view-floorplans" type="button" value="View All Floorplans" 
             onclick="location.href = 'floorplans.html';">
-          <input class= "btn btn-default" id="view-classrooms" type="button" value="View Classrooms">          
          </div>
+         <ul class="list-group" id="classroom-list">
+         </ul>
       </div>
       <div id="map"></div>
     </div>
