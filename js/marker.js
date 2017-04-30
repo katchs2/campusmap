@@ -43,8 +43,6 @@ function initMap() {
           populateInfoWindow(this, largeInfowindow);
         });
         marker.addListener("click", function() {
-          // var classroom_list = document.getElementById('classroom-list');
-          // classroom_list.innerHTML = '';
           var floor_group = document.getElementById('floor-group');
           floor_group.innerHTML = '';
           populateInfoWindow(this, largeInfowindow);
@@ -75,8 +73,6 @@ function populateInfoWindow(marker, infowindow) {
     if the infowindow is closed. Remove the classroom list too.
     */
     infowindow.addListener('closeclick', function() {
-      // var classroom_list = document.getElementById('classroom-list');
-      // classroom_list.innerHTML = '';
       var display_title = document.getElementById('display-title');
       var floor_group = document.getElementById("floor-group")//.style.display='none';
       floor_group.innerHTML = "";
@@ -136,16 +132,6 @@ function getClassrooms(marker) {
                 }
               }
               for (var i=0;i < floors.length;i++) {
-                // var li = document.createElement("li");
-                // var span = document.createElement("span");  
-                // span.setAttribute("class","badge badge-info badge-pill");
-                // span.appendChild(document.createTextNode(floors[i].classrooms.length));
-                // li.appendChild(document.createTextNode("Floor #"+floors[i].num));
-                // li.appendChild(span);
-                // li.setAttribute("id", floors[i].num);
-                // li.setAttribute("class", "list-group-item");
-                // document.getElementById("classroom-list").appendChild(li);
-
                 var panel = document.createElement("div");
                 var panel_collapse = document.createElement("div");
                 var panel_heading = document.createElement("div");
@@ -188,39 +174,22 @@ function getClassrooms(marker) {
         var classroom_list = document.getElementById('floor-group').getElementsByClassName('panel');
         for (var i = 0; i < classroom_list.length; i++) {
           var panel = classroom_list[i];
-          console.log(panel.id);
+          var floor_object;
           panel.addEventListener("click", function() {
-            var floor_num = panel.id;
-            // console.log(panel.id);
-            var result = $.grep(floors, function(floor_object,index){
-              return floor_object.num == floor_num;
-            });  
-            console.log(result[0].classrooms);
-            for(var i = 0; i < result[0].classrooms.length; i++) {
-              // console.log(result[0].classrooms[i]);
-              // panel_collapse = document.getElementById.getElementsByClassName("panel-collapse");
-              // <div class="panel-body">Panel Body</div>
-              //   <div class="panel-footer">Panel Footer</div>
-            }
+            for (var j = 0; j < floors.length; j++) {
+              if (floors[j].num === this.id) {
+                floor_object = floors[j];
+              }
+            }  
+            console.log(floor_object);
+            // for(var i = 0; i < result[0].classrooms.length; i++) {
+            //   console.log(result[0].classrooms[i]);
+            //   panel_collapse = document.getElementById.getElementsByClassName("panel-collapse");
+            //   <div class="panel-body">Panel Body</div>
+            //     <div class="panel-footer">Panel Footer</div>
+            // }
           });
         }
-        // for (var item of document.querySelectorAll("panel")) {
-        //   item.addEventListener("click", function (e) {
-        //     var floor_num = e.target.id;
-        //     console.log(floor_num);
-        //     var result = $.grep(floors, function(floor_object,index){ 
-        //       return floor_object.num == floor_num;
-        //     })[0];  
-        //     for(var i = 0; i < result.classrooms.length; i++) {
-        //       console.log(result.classrooms[i]);
-        //     }
-        //     // var li = document.createElement("li");
-        //     // var li = document.createElement("li");
-        //     // var li = document.createElement("li");
-        //     // var li = document.createElement("li");
-        //     // document.getElementById("classroom-list").appendChild(li);    
-        //   }, false);
-        // }
       });
     });
   }
