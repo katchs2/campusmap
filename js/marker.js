@@ -188,9 +188,10 @@ function getClassrooms(marker) {
         var classroom_list = document.getElementById('floor-group').getElementsByClassName('panel');
         for (var i = 0; i < classroom_list.length; i++) {
           var panel = classroom_list[i];
+          console.log(panel.id);
           panel.addEventListener("click", function() {
             var floor_num = panel.id;
-            console.log(panel.id);
+            // console.log(panel.id);
             var result = $.grep(floors, function(floor_object,index){
               return floor_object.num == floor_num;
             });  

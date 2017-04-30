@@ -2,6 +2,7 @@
 <html>
   <head>
     <link rel="stylesheet" href="css/styles.css">
+    <script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -17,7 +18,8 @@
         <div>
           <input class= "btn btn-default" id="show-listings" type="button" value="Show Listings">
           <input class= "btn btn-default" id="hide-listings" type="button" value="Hide Listings">
-          <input class="btn btn-default"  id="view-floorplans" type="button" value="View Floorplans" 
+          <input class="btn btn-default btn-primary"  id="view-floorplans" type="button" value="View All Floorplans" 
+            onclick="location.href = 'floorplans.html';">
          </div>
          <!-- <ul class="list-group" id="classroom-list"> -->
          <div class="panel-group" id="floor-group">
@@ -43,7 +45,6 @@
         src=
         "https://maps.googleapis.com/maps/api/js?key=AIzaSyCOGUVgPYhTg2ucyTbUQPpKKLUFNSStgn4&v=3&callback=initMap">
     </script>
-    <script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
     <script type="text/javascript" src="json/locations.json"></script>
     <script type="text/javascript" src="js/marker.js"></script>
   </body>   
