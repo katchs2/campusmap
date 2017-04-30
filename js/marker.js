@@ -24,7 +24,7 @@ function initMap() {
   $(document).ready(function(){
     $.getJSON("json/locations.json", function(json) {
       $.each(json.locations, function(index, location) {
-         // Create marker objects and stroe them
+         // Create marker objects and store them
         var position = new google.maps.LatLng(location.latitude,location.longitude);
         var title = location.title;
         var marker = new google.maps.Marker({
@@ -34,9 +34,14 @@ function initMap() {
         });
         markers.push(marker);
 
-        // Create an onclick event to open an infowindow at each marker.
-        // It will display the title of the building
-        // This will also clear the space for the classroom list
+        /*
+        Create an mouseover/onclick event to open an infowindow at each marker.
+        The click event will display the title of the building and make room
+        for the classroom list
+        */
+        marker.addListener("mouseover", function() {
+          populateInfoWindow(this, largeInfowindow);
+        });
         marker.addListener("click", function() {
           var classroom_list = document.getElementById('classroom-list');
           classroom_list.innerHTML = '';
@@ -120,7 +125,7 @@ function getClassrooms(marker) {
                 for (var room in all_floors[floor_num]) {
                   var floor = {
                     num: room,
-                    classrooms: all_floors[floor_num][room]
+                    classrooms: all_floors[floor_num][room].sort()
                   };
                   floors.push(floor);
                 }
@@ -132,8 +137,8 @@ function getClassrooms(marker) {
                 span.appendChild(document.createTextNode(floors[i].classrooms.length));
                 li.appendChild(document.createTextNode(floors[i].num));
                 li.appendChild(span);
-                li.setAttribute("class", "list-group-item");
                 li.setAttribute("id", floors[i].num);
+                li.setAttribute("class", "list-group-item");
                 document.getElementById("classroom-list").appendChild(li);
               }
             }
@@ -148,8 +153,15 @@ function getClassrooms(marker) {
         }
         var classroom_list = document.getElementById('classroom-list').getElementsByTagName('span');
         for (var item of document.querySelectorAll("span")) {
-          item.addEventListener("click", function (evt) {
-            // console.log("IT WORKED");
+          item.addEventListener("click", function (e) {
+          var floor_num = e.target.parentNode.id;
+          var result = $.grep(floors, function(floor_object,index){ 
+            return floor_object.num == floor_num;
+          })[0];  
+          console.log(result); 
+          for(var i = 0; i < result.classrooms.length; i++) {
+            // console.log(result.classrooms[i]);
+          }         
           }, false);
         }
       });
