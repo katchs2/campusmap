@@ -102,6 +102,12 @@ function hideListings() {
   }
 }
 
+/*Creates a list of classrooms inside a panel
+*/
+function listClassrooms(index) {
+  console.log(index);
+}
+
 /* 
 This function displays the classrooms for a marker in a scrollable sidebar. It searches the json file for the building and
 checks to see if it has classrooms. If so, it displays the classrooms. Else it alerts the user that there are no classrooms
@@ -132,15 +138,18 @@ function getClassrooms(marker) {
                 }
               }
               for (var i=0;i < floors.length;i++) {
+                var collapse_num = (i+1);
                 var panel = document.createElement("div");
                 var panel_collapse = document.createElement("div");
                 var panel_heading = document.createElement("div");
                 var panel_title = document.createElement("h4");
                 var collapse = document.createElement("a");
                 var span = document.createElement("span");
+                var list = document.createElement("ul");
+                list.setAttribute("class","list-group")
                 collapse.appendChild(document.createTextNode("Floor #"+floors[i].num));
                 collapse.setAttribute("data-toggle","collapse");
-                collapse.setAttribute("href","#collapse1");  
+                collapse.setAttribute("href",("#collapse"+collapse_num));  
                 span.setAttribute("class","badge badge-info badge-pill pull-right");
                 span.appendChild(document.createTextNode(floors[i].classrooms.length));
                 panel_title.appendChild(collapse);
@@ -148,12 +157,13 @@ function getClassrooms(marker) {
                 panel_title.setAttribute("class","panel-title");
                 panel_heading.appendChild(panel_title);
                 panel_heading.setAttribute("class","panel-heading");
-                panel_collapse.setAttribute("class","panel-collapse collapse");
-                panel_collapse.setAttribute("id", floors[i].num);
+                panel_collapse.setAttribute("class","panel-collapse");
+                panel_collapse.setAttribute("id","collapse"+collapse_num);
+                panel_collapse.appendChild(list);
+                panel.setAttribute("id", floors[i].num);
                 panel.appendChild(panel_heading);
                 panel.appendChild(panel_collapse);
                 panel.setAttribute("class","panel panel-default");
-                panel.setAttribute("id", floors[i].num);
                 document.getElementById("floor-group").appendChild(panel);
               }
             }
@@ -168,34 +178,38 @@ function getClassrooms(marker) {
             }
           }
         }
-        /*
+        /*  
         When the badge is clicked, it will display all the rooms on the floor.
         */
         // var classroom_list = document.getElementById('floor-group').getElementsByTagName('span');
-        var classroom_list = document.getElementById('floor-group').getElementsByClassName('panel');
+        var classroom_list = document.getElementById('floor-group').getElementsByClassName('panel-default');
         for (var i = 0; i < classroom_list.length; i++) {
           var panel = classroom_list[i];
-          var floor_object;
-          panel.addEventListener("click", function() {
-            for (var j = 0; j < floors.length; j++) {
-              if (floors[j].num === this.id) {
-                floor_object = floors[j];
-                break;
-              }
-            }  
-            
-            for(var i = 0; i < floor_object.classrooms.length; i++) {
-              var panel_body = document.createElement("div");
-              panel_body.appendChild(document.createTextNode(floor_object.classrooms[i]));
-              if (i === floor_object.classrooms.length - 1) {
-                panel_body.setAttribute("class", "panel-footer");
-              }
-              else {
-                panel_body.setAttribute("class", "panel-body");
-              }              
-              // console.log(document.getElementsByClassName("panel-collapse"));
-              // .getElementById(this.id).appendChild(panel_body);
-            }
+          console.log(panel.id);
+          // var floor_object;
+          // console.log(collapse_num);
+          panel.addEventListener("click", function(panel) {
+            // console.log("Got panel");
+            // var collapse_id = "collapse"+String(i+1);
+            // console.log(console_id);
+            var x = document.querySelector(".panel-collapse#"+collapse_num);
+            console.log(x);
+            // x.innerHTML = '';
+            // console.log(x);
+            // for (var j = 0; j < floors.length; j++) {
+            //   if (floors[j].num === this.id) {
+            //     floor_object = floors[j];
+            //     break;
+            //   }
+            // }
+            // for(var i = 0; i < floor_object.classrooms.length; i++) {
+            //   var list_element = document.createElement("li");
+            //   list_element.setAttribute("class","list-group-item");
+            //   var panel_body = document.createElement("div");
+            //   // panel_body.appendChild(document.createTextNode(floor_object.classrooms[i]));
+            //   // panel_body.setAttribute("class", "panel-body");
+            //   x.appendChild(panel_body);
+            // }
           });
         }
       });
